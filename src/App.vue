@@ -1,26 +1,60 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- <MyComponent></MyComponent> -->
+    <MyStepComponent
+      :stepLists="stepLists"
+      step_circle_color="#188FFF"
+      step_article_color="#8BC7FF"
+      step_article_height="1"
+    >
+    </MyStepComponent>
+    <!-- <MyStepComponent
+      :stepLists="stepLists"
+      direction="vertical"
+      step_circle_color="#188FFF"
+      step_article_color="#8BC7FF"
+      step_article_height="50"
+    >
+    </MyStepComponent> -->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import MyComponent from "./components/MyComponent/MyComponent.vue"
+import MyStepComponent from "./components/MyStepComponent/MyStepComponent.vue";
 export default {
-  name: 'App',
+  data() {
+    return {
+      stepLists: [
+        {
+          title: "2020/02/22 18:26:43",
+          thingName: "到达商场",
+          doneState: true
+        },
+        {
+          title: "2020/02/22 18:26:44",
+          thingName: "到达商场",
+          doneState: true
+        },
+        {
+          title: "2020/02/22 18:26:45",
+          thingName: "到达商场",
+          doneState: false
+        },
+        {
+          title: "2020/02/22 18:26:46",
+          thingName: "到达商场",
+          doneState: false
+        },
+      ],
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    // MyComponent
+    MyStepComponent,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" scoped>
 </style>
